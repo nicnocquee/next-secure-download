@@ -1,7 +1,7 @@
 export default function Index() {
   return (
     <div>
-      <a href="/api/download">Download download.json</a>
+      <a href="/api/download">Download secret file</a>
     </div>
   );
 }

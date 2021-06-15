@@ -3,7 +3,7 @@ import fs from "fs";
 import auth from "express-basic-auth";
 import initMiddleware from "../../utils/init-middleware";
 
-const downloadableFileName = process.env.FILE_NAME || "download.json";
+const downloadableFileName = process.env.FILE_NAME || "secret.json";
 const user = process.env.ADMIN_USERNAME;
 const password = process.env.ADMIN_PASSWORD;
 const basicAuth = auth({
