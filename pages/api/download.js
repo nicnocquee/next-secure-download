@@ -3,6 +3,7 @@ import fs from "fs";
 import auth from "express-basic-auth";
 import initMiddleware from "../../utils/init-middleware";
 
+const downloadableFileName = process.env.FILE_NAME || "download.json";
 const user = process.env.ADMIN_USERNAME;
 const password = process.env.ADMIN_PASSWORD;
 const basicAuth = auth({
@@ -17,10 +18,13 @@ const handler = async (req, res) => {
     await authMiddleware(req, res);
   }
 
-  const filePath = path.join(process.cwd(), "./files/monika.json");
+  const filePath = path.join(process.cwd(), `./files/${downloadableFileName}`);
   const content = fs.readFileSync(filePath);
 
-  res.setHeader("content-disposition", "attachment; filename=monika.json");
+  res.setHeader(
+    "content-disposition",
+    `attachment; filename=${downloadableFileName}`
+  );
   res.send(content);
 };
 
