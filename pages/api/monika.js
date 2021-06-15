@@ -12,10 +12,10 @@ const authMiddleware = initMiddleware(basicAuth);
 
 const handler = async (req, res) => {
   await authMiddleware(req, res);
-  const filePath = path.join(process.cwd(), "./files/hello.json");
+  const filePath = path.join(process.cwd(), "./files/monika.json");
   const content = fs.readFileSync(filePath);
 
-  res.setHeader("content-disposition", "attachment; filename=hello.json");
+  res.setHeader("content-disposition", "attachment; filename=monika.json");
   res.send(content);
 };
 
