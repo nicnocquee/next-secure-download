@@ -35,3 +35,5 @@ yarn-error.log*
 
 # monika
 monika-logs.db
+
+/files
