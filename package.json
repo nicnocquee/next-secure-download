@@ -1,11 +1,24 @@
 {
-  "name": "next-basic-auth-download",
-  "version": "1.0.0",
+  "name": "next-secure-download",
+  "description": "A Next.js project to serve a password-protected download link",
+  "version": "0.0.1",
+  "keywords": [
+    "nextjs",
+    "secure",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/nicnocquee/next-secure-download",
+  "author": {
+    "name": "Nico Prananta",
+    "url": "https://nico.fyi"
+  },
   "scripts": {
     "dev": "next",
+    "postinstall": "yarn format && yarn lint",
     "build": "next build",
     "start": "next start",
-    "format": "prettier -c ."
+    "format": "prettier -c .",
+    "lint": "next lint"
   },
   "dependencies": {
     "express-basic-auth": "https://github.com/nicnocquee/express-basic-auth.git#master",
@@ -16,6 +29,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^17.0.11",
+    "eslint": "^7.28.0",
+    "eslint-config-next": "^11.0.0",
     "prettier": "^2.3.1",
     "typescript": "^4.3.2"
   },

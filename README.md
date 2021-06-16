@@ -4,13 +4,11 @@ This repo contains the basic Next.js project that will allow you to create a pub
 
 # Motivation
 
-I needed a solution to make some files publicly downloadable but
+I needed a solution to make a file publicly downloadable, but
 
-✅ it should be **FREE**.
-
-✅ the files can be directly downloaded, no download page.
-
-✅ the files can be downloaded from script or command line.
+- ✅ it should be **FREE**.
+- ✅ the files can be directly downloaded, no download page.
+- ✅ the files can be downloaded from script or command line.
 
 I couldn't find anything that meets those requirements. So I made this repo by storing the files in private GitHub repository and serving them through Vercel, both of which are FREE.
 
@@ -40,6 +38,7 @@ curl -OJ "https://admin:supersecret@next-basic-auth-download.vercel.app/api/down
 6. Put the file to be downloaded in `files` directory.
 7. Commit the file to your repository then push to Github.
 8. Vercel will automatically build your project and your file will be available for download with the username and password you defined.
+9. Your file then can be downloaded from `https://your-vercel-deployment-url/api/download/the-file-name-here` URL.
 
 # Notes
 
@@ -47,3 +46,8 @@ curl -OJ "https://admin:supersecret@next-basic-auth-download.vercel.app/api/down
 2. Do not forget to assign values to `ADMIN_USERNAME` and `ADMIN_PASSWORD` environment variables, or else the files can be freely downloaded.
 3. If you change the username and password, you need to redeploy the deployment in vercel.
 4. Of course you can [deploy the project to your own server](https://nextjs.org/docs/deployment#other-hosting-options).
+5. This solution is FREE as long as GitHub and Vercel remains having FREE plans. 😆
+
+# License
+
+MIT

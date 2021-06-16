@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 export default function Index() {
   return (
     <div>
-      <a href="/api/download/secret2.json">Download secret file</a>
+      <Link href="/api/download/secret.json">
+        <a>Download secret file</a>
+      </Link>
     </div>
   );
 }
