@@ -8,7 +8,7 @@ const user = process.env.ADMIN_USERNAME || "";
 const password = process.env.ADMIN_PASSWORD || "";
 const basicAuth = auth({
   users: { [user]: password },
-  challenge: true,
+  challenge: true
 });
 
 const authMiddleware = initMiddleware(basicAuth);
@@ -19,7 +19,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const {
-    query: { file_name: fileName },
+    query: { file_name: fileName }
   } = req;
 
   if (!fileName) {

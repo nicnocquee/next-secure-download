@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier -c ."
   },
   "dependencies": {
     "express-basic-auth": "https://github.com/nicnocquee/express-basic-auth.git#master",
@@ -15,6 +16,13 @@
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^17.0.11",
+    "prettier": "^2.3.1",
     "typescript": "^4.3.2"
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "singleQuote": false,
+    "trailingComma": "none"
   }
 }
