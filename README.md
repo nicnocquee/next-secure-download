@@ -14,21 +14,21 @@ I couldn't find anything that meets those requirements. So I made this repo by s
 
 # Demo
 
-1. Check out [this demo website](https://next-basic-auth-download.vercel.app/) deployed in Vercel.
+1. Check out [this demo website](https://next-secure-download.vercel.app/) deployed in Vercel.
 2. Click the "Download secret file" link.
 3. Use `admin` and `supersecret` as User and Password, respectively.
 
-You can also directly download the file from the browser by opening this link [https://next-basic-auth-download.vercel.app/api/download/secret.json](https://next-basic-auth-download.vercel.app/api/download/secret.json). Enter `admin` and `supersecret` as User and Password, respectively.
+You can also directly download the file from the browser by opening this link [https://next-secure-download.vercel.app/api/download/secret.json](https://next-secure-download.vercel.app/api/download/secret.json). Enter `admin` and `supersecret` as User and Password, respectively.
 
 And since the file is protected using basic authentication, you can also download the file directly from command line using curl:
 
 ```shell
-curl -OJ "https://admin:supersecret@next-basic-auth-download.vercel.app/api/download/secret.json"
+curl -OJ "https://admin:supersecret@next-secure-download.vercel.app/api/download/secret.json"
 ```
 
 # How to use
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fnicnocquee%2Fnext-basic-auth-download.git&env=ADMIN_USERNAME,ADMIN_PASSWORD&envDescription=Use%20ADMIN_USERNAME%20and%20ADMIN_PASSWORD%20for%20the%20basic%20authentication.&demo-title=Password%20Protected%20File%20Download&demo-url=https%3A%2F%2Fnext-basic-auth-download.vercel.app%2F)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fnicnocquee%2Fnext-secure-download.git&env=ADMIN_USERNAME,ADMIN_PASSWORD&envDescription=Use%20ADMIN_USERNAME%20and%20ADMIN_PASSWORD%20for%20the%20basic%20authentication.&demo-title=Password%20Protected%20File%20Download&demo-url=https%3A%2F%2Fnext-secure-download.vercel.app%2F)
 
 1. Click the "Deploy" button above to deploy this project to your Vercel account. Please register with Vercel if you haven't.
 2. Fill up `ADMIN_USERNAME` and `ADMIN_PASSWORD` environment variables with the username and password you want to use to protect your file.
