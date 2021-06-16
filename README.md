@@ -1,12 +1,20 @@
 # About
 
-This repo contains the basic Next.js project that will allow you to create a password-protected file download. The file will be protected using basic authentication.
+This repo contains the basic Next.js project that will allow you to create a password-protected file download link. The file will be protected using basic authentication.
 
 # Demo
 
 1. Check out [this demo website](https://next-basic-auth-download.vercel.app/) deployed in Vercel.
 2. Click the "Download secret file" link.
 3. Use `admin` and `supersecret` as User and Password, respectively.
+
+You can also directly download the file from the browser by opening this link [https://next-basic-auth-download.vercel.app/api/download/secret.json](https://next-basic-auth-download.vercel.app/api/download/secret.json). Enter `admin` and `supersecret` as User and Password, respectively.
+
+And since the file is protected using basic authentication, you can also download the file directly from command line using curl:
+
+```shell
+curl -OJ "https://admin:supersecret@next-basic-auth-download.vercel.app/api/download/secret.json"
+```
 
 # How to use
 
@@ -16,8 +24,7 @@ This repo contains the basic Next.js project that will allow you to create a pas
 2. Fill up `ADMIN_USERNAME` and `ADMIN_PASSWORD` environment variables with the username and password you want to use to protect your file.
 3. Then follow the rest of the instructions until the project is deployed. At the end of the deployment process, a repository should be created for you in Github.
 4. Once it's deployed, test it by visiting the project's URL. Then click the "Download secret file" link. You should be prompted with username and password dialogue.
-5. To change the file that you want to protect, clone the repository of your project.
+5. To change, remove, or add the file that you want to protect, first clone the repository of your project.
 6. Put the file to be downloaded in `files` directory.
-7. Add an environment variable in your project in Vercel called `FILE_NAME` with the name of your file as the value.
-8. Commit the file to your repository then push to Github.
-9. Vercel will automatically build your project and your file will be available for download with the username and password you defined.
+7. Commit the file to your repository then push to Github.
+8. Vercel will automatically build your project and your file will be available for download with the username and password you defined.

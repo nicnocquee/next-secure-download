@@ -2,9 +2,8 @@ import path from "path";
 import type { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import auth from "express-basic-auth";
-import initMiddleware from "../../utils/init-middleware";
+import initMiddleware from "../../../utils/init-middleware";
 
-const downloadableFileName = process.env.FILE_NAME || "secret.json";
 const user = process.env.ADMIN_USERNAME || "";
 const password = process.env.ADMIN_PASSWORD || "";
 const basicAuth = auth({
@@ -19,12 +18,28 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     await authMiddleware(req, res);
   }
 
-  const filePath = path.join(process.cwd(), `./files/${downloadableFileName}`);
+  const {
+    query: { file_name: fileName },
+  } = req;
+
+  if (!fileName) {
+    return res.status(404).send("File not found");
+  }
+
+  const decodedFileName = decodeURIComponent(fileName as string);
+  const filePath = path.join(process.cwd(), `./files/${decodedFileName}`);
+
+  try {
+    fs.accessSync(filePath, fs.constants.R_OK);
+  } catch (err) {
+    return res.status(404).send("File not found");
+  }
+
   const content = fs.readFileSync(filePath);
 
   res.setHeader(
     "content-disposition",
-    `attachment; filename=${downloadableFileName}`
+    `attachment; filename=${decodedFileName}`
   );
   res.send(content);
 };
