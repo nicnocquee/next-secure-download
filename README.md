@@ -7,6 +7,7 @@ This repo contains the basic Next.js project that will allow you to create a pub
 I needed a solution to make a file publicly downloadable, but
 
 - ✅ it should be **FREE**.
+- ✅ the files are password-protected.
 - ✅ the files can be directly downloaded, no download page.
 - ✅ the files can be downloaded from script or command line.
 
