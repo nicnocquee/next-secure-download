@@ -2,6 +2,10 @@
 
 This repo contains the basic Next.js project that will allow you to create a public password-protected file download link. The file will be protected using basic authentication.
 
+Btw, support this repo in Product Hunt, will you? 😁
+
+<a href="https://www.producthunt.com/posts/next-secure-download?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-next-secure-download" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=300610&theme=light" alt="Next Secure Download - Create a password-protected download link for free | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+
 # Motivation
 
 I needed a solution to make a file publicly downloadable, but
