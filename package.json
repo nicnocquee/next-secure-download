@@ -1,6 +1,6 @@
 {
   "name": "next-secure-download",
-  "description": "A Next.js project to serve a password-protected download link",
+  "description": "A Next.js project to serve password-protected download links",
   "version": "0.0.1",
   "keywords": [
     "nextjs",
