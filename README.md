@@ -45,6 +45,8 @@ curl -OJ "https://admin:supersecret@next-secure-download.vercel.app/api/download
 8. Vercel will automatically build your project and your file will be available for download with the username and password you defined.
 9. Your file then can be downloaded from `https://your-vercel-deployment-url/api/download/the-file-name-here` URL.
 
+If you'd rather watch a video on how to use this project, check it out in [this blog post](https://nicnocquee.medium.com/create-password-protected-download-links-for-free-with-github-and-vercel-a4758602b21e).
+
 # Notes
 
 1. It goes without saying that the files remain secret as long as your repository is private!
