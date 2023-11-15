@@ -58,3 +58,8 @@ If you'd rather watch a video on how to use this project, check it out in [this 
 # License
 
 MIT
+
+# Info
+
+I'm making a book about [Pull Requests Best Practices. Boost Your Team's Efficiency: Master the Art of Writing & Reviewing Pull Requests!
+](https://pr.nico.fyi). Check it out!
