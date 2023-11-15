@@ -14,7 +14,7 @@
   },
   "scripts": {
     "dev": "next",
-    "postinstall": "yarn format && yarn lint",
+    "postinstall": "npm run format && npm run lint",
     "build": "next build",
     "start": "next start",
     "format": "prettier -c .",
@@ -37,7 +37,6 @@
   },
   "prettier": {
     "bracketSpacing": true,
-    "jsxBracketSameLine": true,
     "singleQuote": false,
     "trailingComma": "none"
   }
