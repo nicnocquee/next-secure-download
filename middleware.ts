@@ -26,10 +26,10 @@ function isAuthenticated(req: NextRequest) {
     return false;
   }
 
-  const encodedCredentials = authheader.split(' ')[1];
-  const buffer = Buffer.from(encodedCredentials, 'base64');
+  const encodedCredentials = authheader.split(" ")[1];
+  const buffer = Buffer.from(encodedCredentials, "base64");
   const decodedCredentials = buffer.toString();
-  const colonIndex = decodedCredentials.indexOf(':');
+  const colonIndex = decodedCredentials.indexOf(":");
   if (colonIndex === -1) {
     return false; // Malformed credentials
   }
