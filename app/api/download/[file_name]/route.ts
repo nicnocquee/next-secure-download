@@ -23,7 +23,7 @@ export const GET = async (
     if (err.code === "ENOENT") {
       return new Response("File not found", { status: 404 });
     } else {
-      console.error(err);
+      console.error("Error accessing file:", err.message);
       // Handle other possible errors (e.g., permission issues)
       return new Response("Error accessing file", { status: 500 });
     }
