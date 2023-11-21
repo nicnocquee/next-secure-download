@@ -28,7 +28,7 @@ export const GET = async (
   return new Response(content, {
     status: 200,
     headers: {
-      "content-disposition": `attachment; filename=${decodedFileName}`
+      "content-disposition": `attachment; filename="${encodeURIComponent(decodedFileName)}"`
     }
   });
 };
