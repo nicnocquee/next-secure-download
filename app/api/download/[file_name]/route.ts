@@ -9,7 +9,7 @@ export const GET = async (
     return new Response("File not found", { status: 404 });
   }
 
-  const decodedFileName = path.basename(decodeURIComponent(fileName));
+  const decodedFileName = path.basename(decodeURIComponent(fileName)).trim();
   const filePath = path.join(process.cwd(), `./files/${decodedFileName}`);
 
   try {
