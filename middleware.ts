@@ -26,11 +26,15 @@ function isAuthenticated(req: NextRequest) {
     return false;
   }
 
-  const auth = Buffer.from(authheader.split(" ")[1], "base64")
-    .toString()
-    .split(":");
-  const user = auth[0];
-  const pass = auth[1];
+  const encodedCredentials = authheader.split(' ')[1];
+  const buffer = Buffer.from(encodedCredentials, 'base64');
+  const decodedCredentials = buffer.toString();
+  const colonIndex = decodedCredentials.indexOf(':');
+  if (colonIndex === -1) {
+    return false; // Malformed credentials
+  }
+  const user = decodedCredentials.substring(0, colonIndex);
+  const pass = decodedCredentials.substring(colonIndex + 1);
 
   if (user === adminUser && pass === adminPassword) {
     return true;
