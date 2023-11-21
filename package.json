@@ -21,7 +21,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "express-basic-auth": "https://github.com/nicnocquee/express-basic-auth.git#master",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
