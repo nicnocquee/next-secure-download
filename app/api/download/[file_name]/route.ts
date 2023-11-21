@@ -4,17 +4,15 @@ import fs from "fs";
 export const GET = async (
   _req: Request,
   { params: { file_name: fileName } }: { params: { file_name: string } }
-  const decodedFileName = path.basename(decodeURIComponent(fileName)).trim();
-  // Ensure that the decodedFileName does not contain any directory traversal characters
-  if (decodedFileName.includes('..')) {
-    return new Response("Invalid file name", { status: 400 });
-  }
 ) => {
   if (!fileName) {
     return new Response("File not found", { status: 404 });
   }
-
   const decodedFileName = path.basename(decodeURIComponent(fileName)).trim();
+  // Ensure that the decodedFileName does not contain any directory traversal characters
+  if (decodedFileName.includes("..")) {
+    return new Response("Invalid file name", { status: 400 });
+  }
   const filePath = path.join(process.cwd(), `./files/${decodedFileName}`);
 
   try {
