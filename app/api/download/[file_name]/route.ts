@@ -13,11 +13,12 @@ export const GET = async (
   const filePath = path.join(process.cwd(), `./files/${decodedFileName}`);
 
   try {
-    fs.accessSync(filePath, fs.constants.R_OK);
+    await fs.promises.access(filePath, fs.constants.R_OK);
   } catch (err: any) {
     if (err.code === "ENOENT") {
       return new Response("File not found", { status: 404 });
     } else {
+      console.error(err);
       // Handle other possible errors (e.g., permission issues)
       return new Response("Error accessing file", { status: 500 });
     }
