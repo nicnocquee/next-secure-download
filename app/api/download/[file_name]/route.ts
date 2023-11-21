@@ -9,16 +9,21 @@ export const GET = async (
     return new Response("File not found", { status: 404 });
   }
 
-  const decodedFileName = decodeURIComponent(fileName as string);
+  const decodedFileName = path.basename(decodeURIComponent(fileName));
   const filePath = path.join(process.cwd(), `./files/${decodedFileName}`);
 
   try {
     fs.accessSync(filePath, fs.constants.R_OK);
-  } catch (err) {
-    return new Response("File not found", { status: 404 });
+  } catch (err: any) {
+    if (err.code === "ENOENT") {
+      return new Response("File not found", { status: 404 });
+    } else {
+      // Handle other possible errors (e.g., permission issues)
+      return new Response("Error accessing file", { status: 500 });
+    }
   }
 
-  const content = fs.readFileSync(filePath);
+  const content = await fs.promises.readFile(filePath);
 
   return new Response(content, {
     status: 200,

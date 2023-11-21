@@ -32,7 +32,7 @@ function isAuthenticated(req: NextRequest) {
   const user = auth[0];
   const pass = auth[1];
 
-  if (user == adminUser && pass == adminPassword) {
+  if (user === adminUser && pass === adminPassword) {
     return true;
   } else {
     return false;
