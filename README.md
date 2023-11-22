@@ -1,3 +1,5 @@
+![Next secure download logo](https://github.com/nicnocquee/next-secure-download/blob/main/public/next-secure-download-icon-small.png?raw=true)
+
 # About
 
 This repo contains the basic [Next.js](https://nextjs.org) project that will allow you to create a public password-protected file download link. The file will be protected using basic authentication.
