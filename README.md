@@ -1,6 +1,6 @@
 # About
 
-This repo contains the basic Next.js project that will allow you to create a public password-protected file download link. The file will be protected using basic authentication.
+This repo contains the basic [Next.js](https://nextjs.org) project that will allow you to create a public password-protected file download link. The file will be protected using basic authentication.
 
 Btw, support this repo in Product Hunt, will you? 😁
 
@@ -15,11 +15,11 @@ I needed a solution to make a file publicly downloadable, but
 - ✅ the files can be directly downloaded, no download page.
 - ✅ the files can be downloaded from script or command line.
 
-I couldn't find anything that meets those requirements. So I made this repo by storing the files in private GitHub repository and serving them through Vercel, both of which are FREE.
+I couldn't find anything that meets those requirements. So I made this repo by storing the files in private GitHub repository and serving them through [Vercel](https://vercel.com), both of which are FREE.
 
 # Demo
 
-1. Check out [this demo website](https://next-secure-download.vercel.app/) deployed in Vercel.
+1. Check out [this demo website](https://next-secure-download.vercel.app/) which was deployed to Vercel.
 2. Click the "Download secret file" link.
 3. Use `admin` and `supersecret` as User and Password, respectively.
 
@@ -46,6 +46,15 @@ curl -OJ "https://admin:supersecret@next-secure-download.vercel.app/api/download
 9. Your file then can be downloaded from `https://your-vercel-deployment-url/api/download/the-file-name-here` URL.
 
 If you'd rather watch a video on how to use this project, check it out in [this blog post](https://nicnocquee.medium.com/create-password-protected-download-links-for-free-with-github-and-vercel-a4758602b21e).
+
+# Use cases
+
+- Securely store and serve a configuration file for your app.
+- Share files with others privately.
+
+# Code overview
+
+The not-so-secret sauce is inside the `app/api/download/[file_name]/route.ts` and `middleware.ts`. In `middleware.ts`, the app will check the credentials. In `app/api/download/[file_name]/route.ts`, the app will find and return the file. That's it.
 
 # Notes
 
