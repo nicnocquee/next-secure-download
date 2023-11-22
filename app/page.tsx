@@ -11,9 +11,24 @@ export default function Index() {
         height={200}
         alt="next secure download logo"
       />
-      <Link prefetch={false} href="/api/download/secret.json">
+      <Link
+        className="button"
+        prefetch={false}
+        href="/api/download/secret.json"
+      >
         Download secret file
       </Link>
+      <footer>
+        <div>
+          <a
+            target="_blank"
+            href="https://github.com/nicnocquee/next-secure-download"
+          >
+            Open Source
+          </a>{" "}
+          by <a href="https://nico.fyi">Nico Prananta</a>
+        </div>
+      </footer>
     </div>
   );
 }
