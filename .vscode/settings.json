@@ -1,0 +1,4 @@
+{
+  "CodeGPT.apiKey": "Ollama",
+  "CodeGPT.model": "codellama:34b"
+}
