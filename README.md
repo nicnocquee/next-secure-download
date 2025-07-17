@@ -17,7 +17,7 @@ I couldn't find anything that meets those requirements. So I made this repo by s
 
 # Demo
 
-1. Check out [this demo website](https://next-secure-download.netlify.app) which was deployed to Vercel.
+1. Check out [this demo website](https://next-secure-download.netlify.app) which was deployed to Netlify.
 2. Click the "Download secret file" link.
 3. Use `admin` and `supersecret` as User and Password, respectively.
 
