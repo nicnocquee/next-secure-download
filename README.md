@@ -29,7 +29,9 @@ And since the file is protected using basic authentication, you can also downloa
 curl -OJ "https://admin:supersecret@next-secure-download.netlify.app/api/download/secret.json"
 ```
 
-# How to use
+# Quick Start
+
+In this example, I'm using Netlify to deploy the project. You can use any other hosting service like Vercel, or even your own server.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/nicnocquee/next-secure-download)
 
