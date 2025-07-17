@@ -17,11 +17,11 @@ I couldn't find anything that meets those requirements. So I made this repo by s
 
 # Demo
 
-1. Check out [this demo website](https://nextsecure.nico.fyi/) which was deployed to Vercel.
+1. Check out [this demo website](https://next-secure-download.netlify.app) which was deployed to Vercel.
 2. Click the "Download secret file" link.
 3. Use `admin` and `supersecret` as User and Password, respectively.
 
-You can also directly download the file from the browser by opening this link [https://next-secure-download.netlify.app](https://next-secure-download.netlify.app). Enter `admin` and `supersecret` as User and Password, respectively.
+You can also directly download the file from the browser by opening this link [https://next-secure-download.netlify.app/api/download/secret.json](https://next-secure-download.netlify.app/api/download/secret.json). Enter `admin` and `supersecret` as User and Password, respectively.
 
 And since the file is protected using basic authentication, you can also download the file directly from command line using curl:
 
