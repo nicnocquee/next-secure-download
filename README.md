@@ -13,7 +13,7 @@ I needed a solution to make a file publicly downloadable, but
 - ✅ the files can be directly downloaded, no download page.
 - ✅ the files can be downloaded from script or command line.
 
-I couldn't find anything that meets those requirements. So I made this repo by storing the files in private GitHub repository and serving them through [Vercel](https://vercel.com), both of which are FREE.
+I couldn't find anything that meets those requirements. So I made this repo by storing the files in private GitHub repository and serving them through free hosting like Vercel or Netlify, both of which are FREE.
 
 # Demo
 
@@ -21,29 +21,27 @@ I couldn't find anything that meets those requirements. So I made this repo by s
 2. Click the "Download secret file" link.
 3. Use `admin` and `supersecret` as User and Password, respectively.
 
-You can also directly download the file from the browser by opening this link [https://nextsecure.nico.fyi/api/download/secret.json](https://nextsecure.nico.fyi/api/download/secret.json). Enter `admin` and `supersecret` as User and Password, respectively.
+You can also directly download the file from the browser by opening this link [https://next-secure-download.netlify.app](https://next-secure-download.netlify.app). Enter `admin` and `supersecret` as User and Password, respectively.
 
 And since the file is protected using basic authentication, you can also download the file directly from command line using curl:
 
 ```shell
-curl -OJ "https://admin:supersecret@nextsecure.nico.fyi/api/download/secret.json"
+curl -OJ "https://admin:supersecret@next-secure-download.netlify.app/api/download/secret.json"
 ```
 
 # How to use
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fnicnocquee%2Fnext-secure-download.git&env=ADMIN_USERNAME,ADMIN_PASSWORD&envDescription=Use%20ADMIN_USERNAME%20and%20ADMIN_PASSWORD%20for%20the%20basic%20authentication.&demo-title=Password%20Protected%20File%20Download&demo-url=https%3A%2F%2Fnext-secure-download.vercel.app%2F)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/nicnocquee/next-secure-download)
 
-1. Click the "Deploy" button above to deploy this project to your Vercel account. Please register with Vercel if you haven't.
+1. Click the "Deploy" button above to deploy this project to your Netlify account. Please register with Netlify if you haven't.
 2. Fill up `ADMIN_USERNAME` and `ADMIN_PASSWORD` environment variables with the username and password you want to use to protect your file.
-3. Then follow the rest of the instructions until the project is deployed. Make sure the repository that will be created is private!
+3. Then follow the rest of the instructions until the project is deployed. **Make sure the repository that will be created is private!**
 4. Once it's deployed, test it by visiting the project's URL. Then click the "Download secret file" link. You should be prompted with username and password dialogue.
 5. To change, remove, or add the file that you want to protect, first clone the repository of your project.
 6. Put the file to be downloaded in `files` directory.
 7. Commit the file to your repository then push to Github.
-8. Vercel will automatically build your project and your file will be available for download with the username and password you defined.
-9. Your file then can be downloaded from `https://your-vercel-deployment-url/api/download/the-file-name-here` URL.
-
-If you'd rather watch a video on how to use this project, check it out in [this blog post](https://nicnocquee.medium.com/create-password-protected-download-links-for-free-with-github-and-vercel-a4758602b21e).
+8. Netlify will automatically build your project and your file will be available for download with the username and password you defined.
+9. Your file then can be downloaded from `https://your-netlify-deployment-url/api/download/the-file-name-here` URL.
 
 # Use cases
 
@@ -58,9 +56,9 @@ The not-so-secret sauce is inside the `app/api/download/[file_name]/route.ts` an
 
 1. It goes without saying that the files remain secret as long as your repository is private!
 2. Do not forget to assign values to `ADMIN_USERNAME` and `ADMIN_PASSWORD` environment variables, or else the files can be freely downloaded.
-3. If you change the username and password, you need to redeploy the deployment in vercel.
+3. If you change the username and password, you need to redeploy the deployment in the hosting service.
 4. Of course you can [deploy the project to your own server](https://nextjs.org/docs/deployment#other-hosting-options).
-5. This solution is FREE as long as GitHub and Vercel remains having FREE plans. 😆
+5. This solution is FREE as long as GitHub and the hosting service remains having FREE plans. 😆
 
 # License
 
