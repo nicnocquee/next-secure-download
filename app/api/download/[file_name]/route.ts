@@ -5,8 +5,11 @@ import fs from "fs";
 export const GET = async (
   _req: Request,
   // Destructure and rename 'file_name' from the params object to 'fileName'
-  { params: { file_name: fileName } }: { params: { file_name: string } }
+  { params }: { params: Promise<{ file_name: string }> }
 ) => {
+  const { file_name } = await params;
+  const fileName = file_name;
+
   // If filename is not provided, return 404 error response
   if (!fileName) {
     return new Response("File not found", { status: 404 });
